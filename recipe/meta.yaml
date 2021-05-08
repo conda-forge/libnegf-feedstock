@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 9ee909d59987d80c65f9d30fba3adc31dfba35d824e4aa01aa2091084c47c27c
-  patches:
-    - cmake-version.patch
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
