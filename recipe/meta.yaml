@@ -1,5 +1,5 @@
 {% set name = "libnegf" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ef8ecbb43e3d0b2c8557ad8ab81c1d9b9a5fa3db53ca18008f76664bc88f83a1
+  sha256: 9ee909d59987d80c65f9d30fba3adc31dfba35d824e4aa01aa2091084c47c27c
   patches:
     - cmake-version.patch
 
