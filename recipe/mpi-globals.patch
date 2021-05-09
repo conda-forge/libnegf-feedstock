@@ -12,20 +12,24 @@ index 300e1f7..11cc02e 100644
  target_link_libraries(negf PRIVATE ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
  
 diff --git a/src/mpi_globals.F90 b/src/mpi_globals.F90
-index 8009cd7..de140f3 100644
+index 8009cd7..7d58790 100644
 --- a/src/mpi_globals.F90
 +++ b/src/mpi_globals.F90
-@@ -24,7 +24,8 @@ module mpi_globals
+@@ -24,11 +24,11 @@ module mpi_globals
  
  #:if defined("MPI")
  
 -  use libmpifx_module
-+  use mpi, only : mpi_cart_create, mpi_cart_sub
++  use mpi
 +  use libmpifx_module, only : mpifx_comm
  
  #:endif
  
-@@ -61,14 +62,18 @@ subroutine negf_cart_init(inComm, nk, cartComm, energyComm, kComm)
+-  INTEGER, SAVE ::  mpi_comm
+   INTEGER, SAVE ::  numprocs = 1
+   INTEGER, SAVE ::  id = 0
+   LOGICAL, SAVE ::  id0 = .true.
+@@ -61,14 +61,18 @@ subroutine negf_cart_init(inComm, nk, cartComm, energyComm, kComm)
  
        type(mpifx_comm) :: cartComm
        integer :: outComm
@@ -48,7 +52,7 @@ index 8009cd7..de140f3 100644
        if (mod(inComm%size,nk) /=0 ) then
          stop "Error in cart_init: cannot build a 2D cartesian grid with incompatible sizes"
        end if
-@@ -78,11 +83,11 @@ subroutine negf_cart_init(inComm, nk, cartComm, energyComm, kComm)
+@@ -78,11 +82,11 @@ subroutine negf_cart_init(inComm, nk, cartComm, energyComm, kComm)
        call MPI_CART_CREATE(inComm%id, ndims, dims, periods, reorder, outComm, mpierr)
        call cartComm%init(outComm, mpierr)
  
