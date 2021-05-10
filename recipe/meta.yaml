@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 2b2ebf583f793511b763c80d903ce5fb836ad34ee43aec691440b3a98de6b5b6
-  patches:
-    - mpi-globals.patch
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
