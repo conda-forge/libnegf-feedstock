@@ -37,6 +37,7 @@ requirements:
     - cmake
     - ninja
     - fypp
+    - {{ mpi }}  # [mpi == "openmpi" and build_platform != target_platform]
   host:
     - {{ mpi }}  # [mpi != "nompi"]
     - mpifx * mpi_{{ mpi }}_*  # [mpi != 'nompi']
