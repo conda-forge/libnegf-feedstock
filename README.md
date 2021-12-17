@@ -13,7 +13,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://travis-ci.com/conda-forge/libnegf-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/libnegf-feedstock/master.svg?label=macOS">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -108,6 +115,27 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11201&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnegf-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11201&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnegf-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpinompi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11201&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnegf-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mpinompi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11201&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnegf-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr>
