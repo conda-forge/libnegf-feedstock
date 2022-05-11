@@ -51,6 +51,8 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/lib/libnegf${SHLIB_EXT}
+    - test -f $PREFIX/include/libnegf.h
+    - test -f $PREFIX/include/libnegf/modfiles/libnegf.mod
 
 about:
   home: https://github.com/libnegf/libnegf
