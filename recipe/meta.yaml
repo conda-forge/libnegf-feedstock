@@ -1,5 +1,5 @@
 {% set name = "libnegf" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e9533eed65ab5fc2a73cfc4a4b4c0de4d45ff2ec55c2e3f4206ca55cec7a4cc4
+  sha256: 6bbb5e4223773f3b6e24daafd32ecec2b5a09cb2e6413394dce81a03685af312
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}

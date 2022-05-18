@@ -15,19 +15,13 @@ if [ "${mpi}" == "openmpi" ]; then
 fi
 
 cmake_options=(
-   ${CMAKE_ARGS}
-   "-DCMAKE_INSTALL_PREFIX=${PREFIX}"
-   "-DCMAKE_INSTALL_LIBDIR=lib"
    "-DBUILD_SHARED_LIBS=ON"
    "-DWITH_MPI=${MPI}"
-   "-GNinja"
-   ".."
 )
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
+  cmake_options+=("-DBUILD_TESTING=OFF")
+fi
 
-mkdir -p _build
-pushd _build
-cmake "${cmake_options[@]}"
-
-ninja all install
-
-popd
+cmake -B_build -GNinja ${CMAKE_ARGS} "${cmake_options[@]}"
+cmake --build _build
+cmake --install _build
