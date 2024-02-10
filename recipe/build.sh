@@ -17,10 +17,8 @@ fi
 cmake_options=(
    "-DBUILD_SHARED_LIBS=ON"
    "-DWITH_MPI=${MPI}"
+   "-DBUILD_TESTING=OFF"
 )
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
-  cmake_options+=("-DBUILD_TESTING=OFF")
-fi
 
 cmake -B_build -GNinja -DCMAKE_VERBOSE_MAKEFILE=1 ${CMAKE_ARGS} "${cmake_options[@]}"
 # cmake --build _build
