@@ -260,5 +260,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@aradi](https://github.com/aradi/)
 * [@awvwgk](https://github.com/awvwgk/)
 
